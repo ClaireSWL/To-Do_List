@@ -1,13 +1,137 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.to_do_list {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  margin-top: 100px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h1 {
+  font-size: 3rem;
+}
+
+button {
+  font-size: 1.35rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+}
+
+.add_button {
+  background-color: #ffd792;
+  margin-left: 5px;
+}
+.add_button:hover {
+  background-color: #ff895c;
+}
+
+.edit_button,
+.save_button,
+.delete_button,
+.grip_button {
+  background-color: #fff;
+}
+.edit_button:hover,
+.save_button:hover,
+.delete_button:hover,
+.grip_button:hover {
+  background-color: #ffd792;
+}
+
+input {
+  font-size: 1.3rem;
+  padding: 10px;
+  border: 1px solid #ffd792;
+  border-radius: 5px;
+  margin-bottom: 35px;
+}
+
+input::placeholder {
+  color: rgb(196, 199, 204);
+}
+
+input:focus {
+  outline: none;
+  border: 2px solid #ffd792;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  font-size: 1.35rem;
+  font-weight: bold;
+  background-color: transparent;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.task-item {
+  border: 2px solid #fefcfc;
+  border-radius: 10px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+  padding: 5px;
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.task-item.completed .text {
+  text-decoration: line-through;
+  color: #e5e5e5;
+}
+
+.text {
+  text-align: left;
+  flex-grow: 1;
+  margin-right: 20px;
+}
+
+.edit_button,
+.save_button,
+.delete_button,
+.drag_button {
+  padding: 5px 10px;
+  font-size: 1.2rem;
+  margin-left: 15px;
+  display: flex;
+}
+
+.to_do_list > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Custom checkbox styling */
+.custom-checkbox {
+  margin: 0 15px 0 0;
+  cursor: pointer;
+  appearance: none;
+  border: 2px solid #000;
+  border-radius: 5px;
+  position: relative;
+  cursor: pointer;
+}
+
+.custom-checkbox:checked {
+  background-color: #fff;
+  border-color: #ffd792;
+}
+
+.custom-checkbox:checked::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 6px;
+  width: 6px;
+  height: 12px;
+  border: solid #000;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
 }
